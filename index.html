@@ -1,0 +1,199 @@
+
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<nav class="navbar navbar-light fixed-top shadow p-3 mb-6 bg-white">
+    <button class="btn btn-success" onclick="enviarCarrinhoWhatsApp()">Solicitar cotação</button>
+</nav>
+<br><br>
+<div class="row p-3" style="background-color: #fff;">
+  
+  <div class="col-md-1 p-3"><div>
+    <img src="https://dl.dropbox.com/s/0qnmn7yfggp7ibl/regente.png" width="85" height="85">
+  </div></div>
+  <div class="col-md-11 p-3 pt-4">
+    <h4 style="color:#333">SUPERMERCADO REGENTE</h4>
+    <h4 style="color:#8C8C8C">Nossos Produtos</h4>
+  </div>
+</div>
+
+
+    <div id="accordion">
+
+       <div class="card">
+          
+          <div class="card-header" id="headingOne" style="background-color: #17A2B8;">
+            <h5 class="mb-0">
+              <button class="btn btn-info" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" style="font-size:110%">
+                Itens de Papelaria
+              </button>
+            </h5>
+          </div>
+
+          <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+            
+            <div class="card-body">
+              <div class="row">
+                <div class="col-md-1">
+                  <img src="https://dl.dropbox.com/s/px6nlikdscdqy8c/ab_caderno.png" alt="Caderno"class="img-fluid"/>
+                </div>
+                <div class="col-md-11">
+                  <h5>Caderno</h5>
+                  <p style="font-size:80%;">Descrição do caderno....</p>
+                  <p style="font-size:80%;">Quantidade: <input min="0" type="number" id="quantidade1" value="0" />
+                  </p>
+                </div>
+              </div> 
+            </div>
+
+            <div class="card-body">
+              <div class="row">
+                <div class="col-md-1">
+                  <img src="https://dl.dropbox.com/s/qr6bi3xu06hkk25/a_lapis.png" alt="Lápis"class="img-fluid"/>
+                </div>
+                <div class="col-md-11">
+                  <h5>Lápis</h5>
+                  <p style="font-size:80%;">Descrição do lápis...</p>
+                  <p style="font-size:80%;">Quantidade: <input min="0" type="number" id="quantidade2" size="10" value="0" /></p>
+                </div>
+              </div> 
+            </div>
+
+
+          </div>
+        
+        <div class="card">
+          
+          <div class="card-header" id="headingTwo" style="background-color: #17A2B8;">
+            <h5 class="mb-0">
+              <button class="btn btn-info collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo"  style="font-size:110%">
+                Itens de Limpeza
+              </button>
+            </h5>
+          </div>
+
+          <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+
+            <div class="card-body">
+              <div class="row">
+                <div class="col-md-1">
+
+                  <img src="https://dl.dropbox.com/s/dauiby00b2ageer/a_detergente.png" alt="Detergente" class="img-fluid"/>
+                </div>
+                <div class="col-md-11">
+                  <h5>Detergente</h5>
+                  <p style="font-size:80%;">Descrição do detergente...</p>
+                  <p style="font-size:80%;">Quantidade: <input min="0" type="number" id="quantidade3" value="0" /></p>
+                </div>
+              </div>
+            </div>
+
+            <div class="card-body">
+              <div class="row">
+                <div class="col-md-1">
+                  <img src="https://dl.dropbox.com/s/sts4mc0w7hqw1xu/a_sabaopedra.png" alt="Sabão em pedra" class="img-fluid"/>
+                </div>
+                <div class="col-md-11">
+                  <h5>Sabão em pedra</h5>
+                  <p style="font-size:80%;">Descrição do sabão em pedra...</p>
+                  <p style="font-size:80%;">Quantidade: <input min="0" type="number" id="quantidade4" value="0" /></p>
+                </div>
+              </div>
+            </div>
+
+            <div class="card-body">
+              <div class="row">
+                <div class="col-md-1">
+                  <img src="https://dl.dropbox.com/s/gy9f2kudb4utxvf/a_desifetante.png" alt="Desinfetante" class="img-fluid"/>
+                </div>
+                <div class="col-md-11">
+                  <h5>Desinfetante</h5>
+                  <p style="font-size:80%;">Descrição do desinfetante...</p>
+                  <p style="font-size:80%;">Quantidade: <input min="0" type="number" id="quantidade5" value="0" />
+                  </p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+       </div>
+     </div>
+
+  
+
+
+<script>
+  function enviarCarrinhoWhatsApp() {
+    var itens = [
+      {nome: "Caderno", id: "quantidade1"},
+      {nome: "Lápis", id: "quantidade2"},
+      {nome: "Detergente", id: "quantidade3"},
+      {nome: "Sabão em pedra", id: "quantidade4"},
+      {nome: "Desinfetante", id: "quantidade5"},
+      // Adicione quantos produtos precisar aqui
+    ];
+    var mensagem = "_*COTAÇÃO*_\n\n";
+    var total = 0;
+    for (var i = 0; i < itens.length; i++) {
+      var quantidade = parseInt(document.getElementById(itens[i].id).value);
+      var subtotal = quantidade;
+      if (quantidade > 0) {
+        mensagem += "*"+itens[i].nome+"*"+ "\n" + "Quant: " + quantidade + "\n"+ "\n";
+        total += subtotal;
+      }
+    }
+    if (total > 0) {
+      window.location.href ="https://api.whatsapp.com/send?phone=5574981483054&text=" + encodeURIComponent(mensagem)+"\n"+ "👆🏽Por favor, me envie essa cotação.";
+    } else {
+      alert("Nenhum item selecionado");
+    }
+  }
+</script>
+
+
+       
+    
+
+
+    <script>
+      (function(d,t) {
+        var BASE_URL="https://app.innovchat.com.br";
+        var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+        g.src=BASE_URL+"/packs/js/sdk.js";
+        g.defer = true;
+        g.async = true;
+        s.parentNode.insertBefore(g,s);
+        g.onload=function(){
+          window.chatwootSDK.run({
+            websiteToken: 'TjKuiiMDMs7goSfEM6peEj2U',
+            baseUrl: BASE_URL
+          })
+        }
+      })(document,"script");
+
+    window.chatwootSettings = {
+  hideMessageBubble: false,
+  position: "right",
+  locale: "pt-BR",
+  useBrowserLanguage: true,
+  type: "expanded_bubble",
+  darkMode: "auto",
+  launcherTitle:"Fale conosco no chat"
+};
+      </script>
+    
+    
+
+  </div>
+</body>
+</html>
